@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="862.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.zmeter.login.controller.FXMLHomeDashboardController">
+   <children>
+      <Pane id="pnlDashboard" fx:id="pnlMain" prefHeight="484.0" prefWidth="862.0" styleClass="panelBackground" stylesheets="@main.css">
+         <children>
+            <Pane fx:id="pnlTotalCustomer" layoutX="22.0" layoutY="21.0" onMouseEntered="#eventHoverTotalCustomer" onMouseExited="#eventExitTotalCustomer" prefHeight="76.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/d1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/customer_96px.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblCustomer" layoutX="77.0" layoutY="17.0" text="1002" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="77.0" layoutY="42.0" text="Total Customers" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pnlTotalMeter" layoutX="228.0" layoutY="21.0" onMouseEntered="#eventHoverTotalMeter" onMouseExited="#eventExitTotalMeter" prefHeight="76.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/d2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/Energy%20Meter_96px.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblMeter" layoutX="77.0" layoutY="17.0" text="1950" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="77.0" layoutY="42.0" text="Total Meters" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pnlTotalJob" layoutX="434.0" layoutY="21.0" onMouseEntered="#eventHoverTotalJob" onMouseExited="#eventExitTotalJob" prefHeight="76.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/d3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/Robot_96px.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblJob" layoutX="77.0" layoutY="17.0" text="790" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="77.0" layoutY="42.0" text="Total Jobs" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pnlNotification" layoutX="640.0" layoutY="21.0" onMouseEntered="#eventHoverNotification" onMouseExited="#eventExitNotification" onMousePressed="#eventExpandPanel" prefHeight="76.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+               <children>
+                  <ImageView fitHeight="76.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/d4.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgNotificationImage" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/Push%20Notifications_96px.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblNotification" layoutX="77.0" layoutY="17.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="77.0" layoutY="42.0" text="Notifications" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <AreaChart fx:id="chartJobs" layoutX="19.0" layoutY="160.0" prefHeight="310.0" prefWidth="469.0">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" fx:id="x" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis fx:id="y" label="No Of Meters" side="LEFT" />
+               </yAxis>
+            </AreaChart>
+            <PieChart fx:id="pieChart" layoutX="506.0" layoutY="160.0" prefHeight="310.0" prefWidth="332.0" />
+            <Label layoutX="155.0" layoutY="141.0" text="Weekly Job Progress">
+               <font>
+                  <Font name="Segoe UI" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="617.0" layoutY="141.0" text="Total Operation">
+               <font>
+                  <Font name="Segoe UI" size="16.0" />
+               </font>
+            </Label>
+            <Pane fx:id="pnlExpandNotification" disable="true" layoutX="635.0" layoutY="97.0" prefHeight="211.0" prefWidth="210.0" style="-fx-background-color: transparent;" visible="false">
+               <children>
+                  <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="5.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/pnlNotification.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ListView fx:id="lvNotification" layoutX="12.0" layoutY="20.0" prefHeight="181.0" prefWidth="186.0" style="-fx-background-color: #ffffff;" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

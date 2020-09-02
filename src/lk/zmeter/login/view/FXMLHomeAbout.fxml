@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="862.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.zmeter.login.controller.FXMLHomeAboutController">
+   <children>
+      <ImageView fitHeight="484.0" fitWidth="862.0" opacity="0.65" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../img/about_back.png" />
+         </image>
+      </ImageView>
+      <Pane id="pnlCustomers" prefHeight="484.0" prefWidth="862.0" style="-fx-background-color: transparent;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="331.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="288.0" layoutY="99.0" text="Zmeter Production Management System">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="219.0" layoutY="184.0" prefHeight="43.0" prefWidth="424.0" text="A program for manage production of Serandib Technologies Asia (PVT) LTD.   This software provides to manage daily operations of repairing taxi meteres." wrapText="true" />
+            <Label layoutX="397.0" layoutY="120.0" text="Version 1.0.0" />
+            <Label layoutX="276.0" layoutY="139.0" text="Copyright © 2020 S.D Computers Inc.  All Rights Reserved." />
+            <Label layoutX="219.0" layoutY="274.0" prefHeight="19.0" prefWidth="424.0" text="These are the facilities of this software," wrapText="true" />
+            <Label layoutX="219.0" layoutY="298.0" prefHeight="19.0" prefWidth="424.0" text="- View daily repairing" wrapText="true" />
+            <Label layoutX="219.0" layoutY="317.0" prefHeight="19.0" prefWidth="424.0" text="- Manage customers" wrapText="true" />
+            <Label layoutX="219.0" layoutY="336.0" prefHeight="19.0" prefWidth="424.0" text="- Manage sold meters" wrapText="true" />
+            <Label layoutX="219.0" layoutY="355.0" prefHeight="19.0" prefWidth="424.0" text="- Manage components" wrapText="true" />
+            <Label layoutX="219.0" layoutY="374.0" prefHeight="19.0" prefWidth="424.0" text="- View employees progress &amp; much more." wrapText="true" />
+            <Label layoutX="235.0" layoutY="432.0" text="Contact Us">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <HBox layoutX="327.0" layoutY="420.0" prefHeight="43.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#linkedIn" onMouseEntered="#eventLinkedinZoom" onMouseExited="#eventLinkedinZoomOut" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fx:id="imgLinkedin" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/LinkedIn.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#web" onMouseEntered="#eventWebZoomIn" onMouseExited="#eventWebZoomOut" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fx:id="imgWeb" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Website.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#youTube" onMouseEntered="#eventYtZoomIn" onMouseExited="#eventYtZoomOut" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fx:id="imgYoutube" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/YouTube.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#faceBook" onMouseEntered="#eventFacebookZoomIn" onMouseExited="#eventFacebookZoomOut" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fx:id="imgFacebook" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Facebook.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#instagram" onMouseEntered="#eventInstagramZoomIn" onMouseExited="#eventInstagramZoomOut" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fx:id="imgInstagram" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Instagram.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#twitter" onMouseEntered="#eventTwitterZoomIn" onMouseExited="#eventTwitterZoomOut" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fx:id="imgTwitter" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Twitter.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
+            <Label layoutX="271.0" layoutY="227.0" prefHeight="43.0" prefWidth="320.0" text="And this made for 1st semester final project of IJSE 53 Batch" wrapText="true" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

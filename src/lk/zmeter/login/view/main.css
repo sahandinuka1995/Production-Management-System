@@ -1,0 +1,208 @@
+.btnDashboard{
+    -fx-text-fill: #ffffff;
+    background-color: transparent;
+}
+
+.btnDashboard:hover{
+    -fx-border-color: #d780ff;
+    -fx-border-width: 0px 3px 0px 0px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,1.0), 10, 0, 0, 0);
+}
+
+.btnCustomer{
+    -fx-text-fill: #ffffff;
+    background-color: transparent;
+}
+
+.btnCustomer:hover{
+    -fx-border-color: #d780ff;
+    -fx-border-width: 0px 3px 0px 0px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,1.0), 10, 0, 0, 0);
+}
+
+.btnCustomer:selected{
+    -fx-border-color: #d780ff;
+    -fx-border-width: 0px 3px 0px 0px;
+}
+
+.btnMeter{
+    -fx-text-fill: #ffffff;
+    background-color: transparent;
+}
+
+.btnMeter:hover{
+    -fx-border-color: #d780ff;
+    -fx-border-width: 0px 3px 0px 0px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,1.0), 10, 0, 0, 0);
+}
+
+.btnJob{
+    -fx-text-fill: #ffffff;
+    background-color: transparent;
+}
+
+.btnJob:hover{
+    -fx-border-color: #d780ff;
+    -fx-border-width: 0px 3px 0px 0px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,1.0), 10, 0, 0, 0);
+}
+
+.btnComponent{
+    -fx-text-fill: #ffffff;
+    background-color: transparent;
+}
+
+.btnComponent:hover{
+    -fx-border-color: #d780ff;
+    -fx-border-width: 0px 3px 0px 0px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,1.0), 10, 0, 0, 0);
+}
+
+.btnAbout{
+    -fx-text-fill: #ffffff;
+    background-color: transparent;
+}
+
+.btnAbout:hover{
+    -fx-border-color: #d780ff;
+    -fx-border-width: 0px 3px 0px 0px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,1.0), 10, 0, 0, 0);
+}
+
+.tabel-view{
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header,
+.table-view .column-header .filler,
+.table-view .column-header-background .filler {
+    -fx-background-color: #b0b0b0;
+    -fx-text-fill: #ffffff;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-column{
+    -fx-alignment: CENTER;
+}
+
+/*.table-view .scroll-bar * {
+    -fx-min-width: 0;
+    -fx-pref-width: 0;
+    -fx-max-width: 0;
+
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+}*/
+
+.table-row-cell{
+    -fx-border-width: 3 0 0 0;
+    -fx-border-color:#f4f4f4;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-row-cell {
+    -fx-cell-size: 50px;
+}
+
+.buttonAdd{
+    -fx-background-color: #367BF5;
+    -fx-text-fill: #ffffff;
+}
+
+.buttonAdd:hover{
+    -fx-effect: dropshadow(gaussian, #367BF5, 10, 0.5, 0.0, 0.0);
+}
+
+.buttonSave{
+    -fx-background-color: #3BA649;
+    -fx-text-fill: #ffffff;
+}
+
+.buttonSave:hover{
+    -fx-effect: dropshadow(gaussian, #3BA649, 10, 0.5, 0.0, 0.0);
+}
+
+.buttonRemove{
+    -fx-background-color: #ED6E65;
+    -fx-text-fill: #ffffff;
+}
+
+.buttonRemove:hover{
+    -fx-effect: dropshadow(gaussian, #ED6E65, 10, 0.5, 0.0, 0.0);
+}
+
+.buttonHide{
+    -fx-background-color: #0078D8;
+    -fx-text-fill: #ffffff;
+}
+
+.buttonHide:hover{
+    -fx-effect: dropshadow(gaussian, #0078D8, 10, 0.5, 0.0, 0.0);
+}
+
+.editCustomerTopPanel{
+    -fx-background-color: #6A4BD4;
+}
+
+.btnClose{
+    -fx-background-color: transparent;
+}
+
+.btnCancel{
+    -fx-background-color: #CDCDCD;
+    -fx-border-color:#75868B;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+}
+
+.btnCancel:hover{
+    -fx-background-color: #75868B;
+    -fx-border-width: 1;
+    -fx-border-color: #75868B;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, #75868B, 10, 0.2, 0.0, 0.0);
+}
+
+.pnlOptionBtn{
+    -fx-background-color: transparent;
+    -fx-alignment: CENTER;
+}
+
+.pnlOptionBtn:hover{
+    -fx-background-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(255,255,255,5), 10, 0, 0, 0);
+}
+
+.comboBox{
+    -fx-background-color: #ffffff;
+}
+
+.panelBackground{
+     -fx-background-color: #CDCDCD;
+}
+
+.profileTextFieldBackgroun{
+    -fx-background-color: #ffffff;
+}
+
+.panelPopUp{
+    -fx-background-color: #dfdfdf;
+}
+
+.btnHoverImage:hover{
+    -fx-effect: dropshadow(three-pass-box, #7D4199, 10, 0, 0, 0);
+}
+
+.buttonChangephoto{
+    -fx-background-color: #3EAE52;
+    -fx-text-fill: #ffffff;
+}
+
+.buttonChangephoto:hover{
+    -fx-effect: dropshadow(gaussian, #3EAE52, 10, 0.5, 0.0, 0.0);
+}

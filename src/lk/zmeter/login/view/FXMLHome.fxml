@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="homePane" prefHeight="511.0" prefWidth="972.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.zmeter.login.controller.FXMLHomeController">
+   <children>
+      <Pane layoutX="110.0" layoutY="53.0" prefHeight="482.0" prefWidth="862.0" style="-fx-background-color: transparent; -fx-border-radius: 50 50 50 50;" />
+      <Pane fx:id="pnlTop" layoutX="110.0" prefHeight="53.0" prefWidth="862.0" style="-fx-background-color: #F4F4F4;">
+         <children>
+            <HBox alignment="CENTER" layoutX="135.0" prefHeight="53.0" prefWidth="473.0" spacing="5.0">
+               <children>
+                  <Label fx:id="lblDateTime" text="Initializing...">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Label fx:id="lblHeader" layoutX="14.0" layoutY="15.0" text="Dashboard" textFill="#7d4198">
+               <font>
+                  <Font name="Segoe UI Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="620.0" layoutY="14.0" mnemonicParsing="false" onAction="#actionBtnHide" styleClass="buttonHide" stylesheets="@main.css" text="Hide Form" />
+            <ImageView fx:id="imgProfileImage" fitHeight="25.0" fitWidth="25.0" layoutX="708.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/userImg.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblUsername" layoutX="743.0" layoutY="18.0" maxWidth="-Infinity" prefHeight="17.0" prefWidth="62.0" style="-fx-font-weight: bold; -fx-text-fill: #757D87;" text="Guest" />
+            <Button fx:id="btnPopupMenu" alignment="CENTER" layoutX="808.0" layoutY="11.0" mnemonicParsing="false" onAction="#eventExitWindow" prefHeight="17.0" prefWidth="40.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/Expand%20Arrow_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <BorderPane fx:id="pnlMain" layoutX="110.0" layoutY="53.0" prefHeight="482.0" prefWidth="862.0" style="-fx-background-color: #ffffff; -fx-border-radius: 50 50 50 50;">
+         <center>
+            <HBox alignment="CENTER" prefHeight="507.0" prefWidth="862.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Circle fx:id="circle1" fill="#1f93ff00" radius="10.0" stroke="#9a64b5" strokeType="INSIDE" strokeWidth="6.0">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Circle>
+                  <Circle fx:id="circle2" fill="#1f93ff00" radius="10.0" stroke="#7d4199" strokeType="INSIDE" strokeWidth="6.0">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Circle>
+                  <Circle fx:id="circle3" fill="#1f93ff00" radius="10.0" stroke="#ab89bc" strokeType="INSIDE" strokeWidth="6.0">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Circle>
+               </children>
+            </HBox>
+         </center>
+      </BorderPane>
+      <ImageView fitHeight="535.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../img/main.jpg" />
+         </image>
+      </ImageView>
+      <Pane fx:id="pnlUserOption" disable="true" layoutX="824.0" layoutY="53.0" prefHeight="221.0" prefWidth="142.0" style="-fx-background-color: transparent;" visible="false">
+         <children>
+            <ImageView fitHeight="216.0" fitWidth="142.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/pnlUserOptionbg.png" />
+               </image>
+            </ImageView>
+            <VBox layoutX="26.0" layoutY="14.0" prefHeight="136.0" prefWidth="102.0" spacing="8.0" style="-fx-background-color: transparent;">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#actionGetHelp" styleClass="pnlOptionBtn" stylesheets="@main.css" text="Get Help">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@../../../../img/Helpg_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#aboutPressed" styleClass="pnlOptionBtn" stylesheets="@main.css" text="About">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@../../../../img/Info_purple_64px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#actionBtnProfile" styleClass="pnlOptionBtn" stylesheets="@main.css" text="Edit Profile">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@../../../../img/User_panel_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     
+                  </Button>
+                  <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#actionBtnLogout" styleClass="pnlOptionBtn" stylesheets="@main.css" text="Logout">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@../../../../img/Logout%20Rounded%20Left_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#actionBtnExit" styleClass="pnlOptionBtn" stylesheets="@main.css" text="Exit">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@../../../../img/Shutdown_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="5.93" radius="4.0075" spread="0.1" width="12.1" />
+         </effect>
+      </Pane>
+      <VBox alignment="CENTER" prefHeight="535.0" prefWidth="110.0" style="-fx-background-color: transparent; -fx-border-radius: 50 0 0 0;">
+         <children>
+            <Button id="btnDashboard" fx:id="btnDashboard" contentDisplay="TOP" graphicTextGap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#dashboardPressed" prefHeight="78.0" prefWidth="107.0" style="-fx-background-color: transparent;" styleClass="btnDashboard" stylesheets="@main.css" text="Dashboard" textAlignment="CENTER" textOverrun="CLIP">
+               <graphic>
+                  <ImageView style="-fx-background-color: transparent;">
+                     <image>
+                        <Image url="@../../../../img/Dashboard_32px.png" />
+                     </image>
+                     
+                  </ImageView>
+               </graphic>
+               
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button contentDisplay="TOP" graphicTextGap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#customerPressed" prefHeight="78.0" prefWidth="107.0" style="-fx-background-color: transparent;" styleClass="btnCustomer" stylesheets="@main.css" text="Customers" textOverrun="CLIP">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../../../../img/customer_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button contentDisplay="TOP" graphicTextGap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#meterPressed" prefHeight="78.0" prefWidth="107.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff;" styleClass="btnMeter" stylesheets="@main.css" text="Meters" textAlignment="CENTER" textOverrun="CLIP">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../../../../img/Energy%20Meter_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button contentDisplay="TOP" graphicTextGap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#jobPressed" prefHeight="78.0" prefWidth="107.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff;" styleClass="btnJob" stylesheets="@main.css" text="Jobs" textOverrun="CLIP">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../../../../img/Queens%20Guard_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button contentDisplay="TOP" graphicTextGap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#componentPressed" prefHeight="78.0" prefWidth="107.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff;" styleClass="btnComponent" stylesheets="@main.css" text="Components" textOverrun="CLIP">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../../../../img/Electronics_32px.png" />
+                     </image>
+                     
+                  </ImageView>
+               </graphic>
+               
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button contentDisplay="TOP" graphicTextGap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#userPressed" prefHeight="78.0" prefWidth="107.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff;" styleClass="btnAbout" stylesheets="@main.css" text="Users" textOverrun="CLIP">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../../../../img/customer_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets top="70.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

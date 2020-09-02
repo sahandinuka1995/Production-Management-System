@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="484.0" prefWidth="862.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.zmeter.login.controller.FXMLHomeUserController">
+   <children>
+      <BorderPane fx:id="pnlMain" prefHeight="484.0" prefWidth="862.0" styleClass="panelBackground" stylesheets="@main.css">
+         <center>
+            <Pane id="pnlCustomers" prefHeight="484.0" prefWidth="862.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="txtSearch" layoutX="16.0" layoutY="19.0" onKeyReleased="#eventSearchUser" prefHeight="30.0" prefWidth="541.0" promptText="Search Customers  (NIC, Phone Number, Vehicle Number)" style="-fx-border-color: #7D4199;" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="529.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/Search_96px.png" />
+                     </image>
+                  </ImageView>
+                  <TableView fx:id="tblUsers" layoutX="7.0" layoutY="68.0" prefHeight="408.0" prefWidth="848.0" style="-fx-selection-bar: #D3D3D3;" stylesheets="@main.css">
+                     <columns>
+                        <TableColumn fx:id="userIcon" editable="false" prefWidth="56.0" />
+                        <TableColumn fx:id="username" editable="false" prefWidth="78.0" text="Username" />
+                        <TableColumn fx:id="name" prefWidth="93.0" text="Name" />
+                        <TableColumn fx:id="password" prefWidth="93.0" text="Password" />
+                        <TableColumn id="cusPhoneNo" fx:id="phoneNo" prefWidth="106.0" text="Phone Number" />
+                        <TableColumn fx:id="last_log" prefWidth="137.0" text="Last Logged" />
+                        <TableColumn fx:id="type" minWidth="1.0" prefWidth="72.0" text="Type" />
+                        <TableColumn fx:id="first_login" minWidth="1.0" prefWidth="103.0" text="Registration" />
+                        <TableColumn fx:id="edit" minWidth="1.0" prefWidth="103.0" text="Edit" />
+                        <TableColumn fx:id="delete" minWidth="1.0" prefWidth="99.0" text="Delete" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="btnAdd" layoutX="721.0" layoutY="18.0" mnemonicParsing="false" onAction="#actionAddUser" prefHeight="32.0" prefWidth="127.0" styleClass="buttonAdd" stylesheets="@main.css" text="Add User">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Add%20User%20Male_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+      <Pane fx:id="pnlDelete" disable="true" prefHeight="484.0" prefWidth="862.0" style="-fx-background-color: transparent;" visible="false">
+         <children>
+            <BorderPane layoutX="245.0" layoutY="150.0" prefHeight="184.0" prefWidth="372.0" style="-fx-background-color: #CDCDCD;">
+               <top>
+                  <Pane prefHeight="40.0" prefWidth="600.0" styleClass="editCustomerTopPanel" stylesheets="@main.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="lblDeleteUserHeader" layoutX="121.0" layoutY="13.0" text="Sahan" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblHeader111" layoutX="43.0" layoutY="13.0" text="Delete User - " textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="13.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/customer_32px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </top>
+               <center>
+                  <Pane prefHeight="360.0" prefWidth="384.0" styleClass="panelPopUp" stylesheets="@main.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button layoutX="192.0" layoutY="87.0" mnemonicParsing="false" onAction="#eventDeleteUser" prefHeight="25.0" prefWidth="90.0" styleClass="buttonAdd" stylesheets="@main.css" text="Yes">
+                           <graphic>
+                              <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/Ok_32px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button layoutX="90.0" layoutY="87.0" mnemonicParsing="false" onAction="#eventDeleteUserCancel" prefHeight="25.0" prefWidth="90.0" styleClass="btnCancel" stylesheets="@main.css" text="No">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/Cancel_can_32px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label layoutX="99.0" layoutY="37.0" text="Are you sure to remove user">
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblDeleteUser" layoutX="254.0" layoutY="37.0" text="sahan">
+                           <font>
+                              <Font name="Segoe UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/img_info.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </center>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </BorderPane>
+         </children>
+      </Pane>
+      <Pane fx:id="pnlAddUser" disable="true" prefHeight="484.0" prefWidth="862.0" visible="false">
+         <children>
+            <BorderPane layoutX="247.0" layoutY="88.0" prefHeight="308.0" prefWidth="369.0" style="-fx-background-color: #CDCDCD;">
+               <top>
+                  <Pane prefHeight="40.0" prefWidth="600.0" styleClass="editCustomerTopPanel" stylesheets="@main.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="lblHeader1" layoutX="43.0" layoutY="13.0" text="Add New User" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="11.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/customer_32px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </top>
+               <center>
+                  <Pane fx:id="pnlAlert" prefHeight="239.0" prefWidth="369.0" styleClass="panelPopUp" stylesheets="@main.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <TextField fx:id="txtUsername" layoutX="66.0" layoutY="18.0" onKeyReleased="#eventCheckUser" prefHeight="30.0" prefWidth="240.0" promptText="Username">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </TextField>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="72.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/userImg.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="txtName" layoutX="66.0" layoutY="56.0" prefHeight="30.0" prefWidth="240.0" promptText="Name">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </TextField>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="72.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/User_32px.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="txtPassword" layoutX="66.0" layoutY="94.0" prefHeight="30.0" prefWidth="240.0" promptText="Password">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </TextField>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="72.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Password_32px.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="txtPhoneNo" layoutX="66.0" layoutY="132.0" prefHeight="30.0" prefWidth="240.0" promptText="Phone Number">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </TextField>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="72.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Cell%20Phone_32px.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="177.0" layoutY="222.0" mnemonicParsing="false" onAction="#actionAddNewUser" prefHeight="25.0" prefWidth="129.0" styleClass="buttonAdd" stylesheets="@main.css" text="Add User">
+                           <graphic>
+                              <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/Add%20User%20Male_32px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button layoutX="66.0" layoutY="222.0" mnemonicParsing="false" onAction="#actionCancelAddUser" prefHeight="25.0" prefWidth="89.0" styleClass="btnCancel" stylesheets="@main.css" text="Cancel">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/Cancel_can_32px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <ComboBox fx:id="cbType" layoutX="66.0" layoutY="171.0" prefHeight="30.0" prefWidth="240.0" promptText="Type" style="-fx-background-color: #ffffff;">
+                           <padding>
+                              <Insets left="23.0" />
+                           </padding>
+                        </ComboBox>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="72.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Sorting%20Arrows_32px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgFound" fitHeight="20.0" fitWidth="20.0" layoutX="278.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../../../img/Info_green_52px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgNotFound" fitHeight="20.0" fitWidth="20.0" layoutX="278.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../../../img/Info_52px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </center>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </BorderPane>
+         </children>
+      </Pane>
+      <Pane fx:id="pnlUpdate" disable="true" prefHeight="484.0" prefWidth="862.0" visible="false">
+         <children>
+            <BorderPane layoutX="247.0" layoutY="147.0" prefHeight="191.0" prefWidth="369.0" style="-fx-background-color: #CDCDCD;">
+               <top>
+                  <Pane prefHeight="40.0" prefWidth="600.0" styleClass="editCustomerTopPanel" stylesheets="@main.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="lblHeader11" layoutX="43.0" layoutY="13.0" text="Edit User - " textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="11.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/customer_32px.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="lblUserUpdateHeader" layoutX="105.0" layoutY="13.0" text="Sahan" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </top>
+               <center>
+                  <Pane fx:id="pnlAlert1" prefHeight="239.0" prefWidth="369.0" styleClass="panelPopUp" stylesheets="@main.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <PasswordField fx:id="txtUpdatePassword" layoutX="66.0" layoutY="21.0" prefHeight="30.0" prefWidth="240.0" promptText="Password">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </PasswordField>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="72.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Password_32px.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="177.0" layoutY="108.0" mnemonicParsing="false" onAction="#actionUpdateUser" prefHeight="25.0" prefWidth="129.0" styleClass="buttonAdd" stylesheets="@main.css" text="Update User">
+                           <graphic>
+                              <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/Edit%20File_48px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button layoutX="66.0" layoutY="108.0" mnemonicParsing="false" onAction="#actionCancelUpdateUser" prefHeight="25.0" prefWidth="89.0" styleClass="btnCancel" stylesheets="@main.css" text="Cancel">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/Cancel_can_32px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <ComboBox fx:id="cbUpdateType" layoutX="66.0" layoutY="60.0" prefHeight="30.0" prefWidth="240.0" promptText="Type" style="-fx-background-color: #ffffff;">
+                           <padding>
+                              <Insets left="23.0" />
+                           </padding>
+                        </ComboBox>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="72.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Sorting%20Arrows_32px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgFound1" fitHeight="20.0" fitWidth="20.0" layoutX="278.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../../../img/Info_green_52px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgNotFound1" fitHeight="20.0" fitWidth="20.0" layoutX="278.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../../../img/Info_52px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </center>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </BorderPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
