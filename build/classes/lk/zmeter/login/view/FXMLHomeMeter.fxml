@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="862.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.zmeter.login.controller.FXMLHomeMeterController">
+   <children>
+      <Pane id="pnlCustomers" fx:id="pnlMain" prefHeight="484.0" prefWidth="862.0" styleClass="panelBackground" stylesheets="@main.css">
+         <children>
+            <TextField fx:id="txtSearch" layoutX="16.0" layoutY="19.0" onKeyReleased="#eventSearchMeter" prefHeight="30.0" prefWidth="541.0" promptText="Search Meters  (Meter SN, Customer NIC)" style="-fx-border-color: #7D4199;" />
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="529.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/Search_96px.png" />
+               </image>
+            </ImageView>
+            <TableView fx:id="tblMeters" layoutX="7.0" layoutY="68.0" prefHeight="408.0" prefWidth="848.0" style="-fx-selection-bar: #D3D3D3;" stylesheets="@main.css">
+               <columns>
+                  <TableColumn fx:id="meterIcon" editable="false" prefWidth="90.0" />
+                  <TableColumn fx:id="meterSn" editable="false" prefWidth="73.0" text="Meter SN" />
+                  <TableColumn fx:id="meterTypeId" prefWidth="190.0" text="Meter Type ID" />
+                  <TableColumn fx:id="cusNic" prefWidth="293.0" text="Customer NIC (Name)" />
+                  <TableColumn fx:id="edit" prefWidth="88.0" text="Edit" />
+                  <TableColumn fx:id="delete" prefWidth="88.0" text="Delete" />
+               </columns>
+            </TableView>
+            <Button layoutX="620.0" layoutY="18.0" mnemonicParsing="false" onAction="#actionOpenAddMeterType" prefHeight="32.0" prefWidth="107.0" styleClass="buttonAdd" stylesheets="@main.css" text="Add Type">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/Add%20User%20Male_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button layoutX="741.0" layoutY="18.0" mnemonicParsing="false" onAction="#actionAddMeter" prefHeight="32.0" prefWidth="107.0" styleClass="buttonAdd" stylesheets="@main.css" text="Add Meter">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/Add%20User%20Male_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+      </Pane>
+      <Pane fx:id="pnlAddMeter" disable="true" prefHeight="484.0" prefWidth="862.0" style="-fx-background-color: transparent;" visible="false">
+         <children>
+            <BorderPane fx:id="bPnlAddMeter" layoutX="247.0" layoutY="125.0" prefHeight="235.0" prefWidth="369.0" style="-fx-background-color: #CDCDCD;">
+               <top>
+                  <Pane prefHeight="40.0" prefWidth="600.0" styleClass="editCustomerTopPanel" stylesheets="@main.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="lblHeader1" layoutX="45.0" layoutY="13.0" text="Add New Meter" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="13.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Visual%20Game%20Boy_32px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </top>
+               <center>
+                  <Pane fx:id="pnlAlert" prefHeight="217.0" prefWidth="369.0" styleClass="panelPopUp" stylesheets="@main.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <TextField fx:id="txtMeterSn" layoutX="66.0" layoutY="18.0" onKeyReleased="#checkMeter" prefHeight="30.0" prefWidth="240.0" promptText="Meter SN">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </TextField>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="72.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Token%20Card%20Code_32px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgFound" fitHeight="20.0" fitWidth="20.0" layoutX="279.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../../../img/Info_green_52px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgNotFound" fitHeight="20.0" fitWidth="20.0" layoutX="279.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../../../img/Info_52px.png" />
+                           </image>
+                        </ImageView>
+                        <ComboBox fx:id="cbMeterType" layoutX="66.0" layoutY="57.0" prefHeight="30.0" prefWidth="240.0" promptText="Meter Type" styleClass="comboBox" stylesheets="@main.css">
+                           <padding>
+                              <Insets left="23.0" />
+                           </padding></ComboBox>
+                        <ComboBox fx:id="cbCustomers" layoutX="66.0" layoutY="97.0" prefHeight="30.0" prefWidth="240.0" promptText="Customer" styleClass="comboBox">
+                           <padding>
+                              <Insets left="23.0" />
+                           </padding></ComboBox>
+                        <Button layoutX="177.0" layoutY="150.0" mnemonicParsing="false" onAction="#actionAddNewMeter" prefHeight="25.0" prefWidth="129.0" styleClass="buttonAdd" stylesheets="@main.css" text="Add Meter">
+                           <graphic>
+                              <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/Add%20User%20Male_32px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button layoutX="66.0" layoutY="150.0" mnemonicParsing="false" onAction="#actionCancel" prefHeight="25.0" prefWidth="89.0" styleClass="btnCancel" stylesheets="@main.css" text="Cancel">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/Cancel_can_32px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        
+                        
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="72.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Report%20Card_32px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="72.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/User_32px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </center>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </BorderPane>
+         </children>
+      </Pane>
+      <Pane fx:id="pnlUpdate" disable="true" prefHeight="484.0" prefWidth="862.0" style="-fx-background-color: transparent;" visible="false">
+         <children>
+            <BorderPane layoutX="245.0" layoutY="135.0" prefHeight="214.0" prefWidth="372.0" style="-fx-background-color: #CDCDCD;">
+               <top>
+                  <Pane prefHeight="40.0" prefWidth="600.0" styleClass="editCustomerTopPanel" stylesheets="@main.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="lblUpdateMeterSn" layoutX="119.0" layoutY="13.0" text="Sahan" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblHeader11" layoutX="42.0" layoutY="13.0" text="Edit Meter  - " textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="12.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Visual%20Game%20Boy_32px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </top>
+               <center>
+                  <Pane prefHeight="360.0" prefWidth="384.0" styleClass="panelPopUp" stylesheets="@main.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button layoutX="177.0" layoutY="128.0" mnemonicParsing="false" onAction="#actionUpdateMeter" prefHeight="25.0" prefWidth="129.0" styleClass="buttonAdd" stylesheets="@main.css" text="Update Meter">
+                           <graphic>
+                              <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/Edit%20File_48px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button layoutX="66.0" layoutY="128.0" mnemonicParsing="false" onAction="#actionUpdateCancel" prefHeight="25.0" prefWidth="89.0" styleClass="btnCancel" stylesheets="@main.css" text="Cancel">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/Cancel_can_32px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <ComboBox fx:id="cbUpdateMeterType" layoutX="66.0" layoutY="34.0" prefHeight="30.0" prefWidth="240.0" promptText="Meter Type" style="-fx-background-color: #ffffff;">
+                           <padding>
+                              <Insets left="23.0" />
+                           </padding></ComboBox>
+                        <ComboBox fx:id="cbUpdateCustomers" layoutX="66.0" layoutY="75.0" prefHeight="30.0" prefWidth="240.0" promptText="Customer" style="-fx-background-color: #ffffff;">
+                           <padding>
+                              <Insets left="23.0" />
+                           </padding></ComboBox>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="72.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Report%20Card_32px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="72.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/User_32px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </center>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </BorderPane>
+         </children>
+      </Pane>
+      <Pane fx:id="pnlAddMeterType" disable="true" prefHeight="484.0" prefWidth="862.0" style="-fx-background-color: transparent;" visible="false">
+         <children>
+            <BorderPane fx:id="bPnlAddMeter1" layoutX="247.0" layoutY="107.0" prefHeight="271.0" prefWidth="369.0" style="-fx-background-color: #CDCDCD;">
+               <top>
+                  <Pane prefHeight="40.0" prefWidth="600.0" styleClass="editCustomerTopPanel" stylesheets="@main.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="lblHeader12" layoutX="45.0" layoutY="13.0" text="Add New Meter Type" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Visual%20Game%20Boy_32px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </top>
+               <center>
+                  <Pane fx:id="pnlAlert1" prefHeight="217.0" prefWidth="369.0" styleClass="panelPopUp" stylesheets="@main.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <TextField fx:id="txtMeterTypeId" editable="false" layoutX="66.0" layoutY="18.0" prefHeight="30.0" prefWidth="240.0" promptText="Meter Type ID">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </TextField>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="72.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Token%20Card%20Code_32px.png" />
+                           </image>
+                        </ImageView>
+                        <ComboBox fx:id="cbMeterVersion" layoutX="66.0" layoutY="57.0" prefHeight="30.0" prefWidth="240.0" promptText="Version" styleClass="comboBox" stylesheets="@main.css">
+                           <padding>
+                              <Insets left="23.0" />
+                           </padding></ComboBox>
+                        <ComboBox fx:id="cbMeterial" layoutX="66.0" layoutY="97.0" prefHeight="30.0" prefWidth="240.0" promptText="Meterial" styleClass="comboBox">
+                           <padding>
+                              <Insets left="23.0" />
+                           </padding></ComboBox>
+                        <ComboBox fx:id="cbPrinter" layoutX="66.0" layoutY="136.0" prefHeight="30.0" prefWidth="240.0" promptText="Printer" styleClass="comboBox">
+                           <padding>
+                              <Insets left="23.0" />
+                           </padding></ComboBox>
+                        <ImageView fx:id="imgFound1" fitHeight="20.0" fitWidth="20.0" layoutX="279.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../../../img/Info_green_52px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgNotFound1" fitHeight="20.0" fitWidth="20.0" layoutX="279.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../../../img/Info_52px.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="177.0" layoutY="187.0" mnemonicParsing="false" onAction="#actionAddMeterType" prefHeight="25.0" prefWidth="129.0" styleClass="buttonAdd" stylesheets="@main.css" text="Add Meter Type">
+                           <graphic>
+                              <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/Add%20User%20Male_32px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button layoutX="66.0" layoutY="187.0" mnemonicParsing="false" onAction="#actionCancelMeterType" prefHeight="25.0" prefWidth="89.0" styleClass="btnCancel" stylesheets="@main.css" text="Cancel">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/Cancel_can_32px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="72.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Webhook_48px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="72.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Energy%20Meter_48px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="72.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Print_48px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </center>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </BorderPane>
+         </children>
+      </Pane>
+      <Pane fx:id="pnlDelete" disable="true" prefHeight="484.0" prefWidth="862.0" style="-fx-background-color: transparent;" visible="false">
+         <children>
+            <BorderPane layoutX="245.0" layoutY="150.0" prefHeight="184.0" prefWidth="372.0" style="-fx-background-color: #CDCDCD;">
+               <top>
+                  <Pane prefHeight="40.0" prefWidth="600.0" styleClass="editCustomerTopPanel" stylesheets="@main.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="lblDeleteMeterHeader" layoutX="130.0" layoutY="13.0" text="Sahan" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblHeader111" layoutX="43.0" layoutY="13.0" text="Delete Meter - " textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="13.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Visual%20Game%20Boy_32px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </top>
+               <center>
+                  <Pane prefHeight="360.0" prefWidth="384.0" styleClass="panelPopUp" stylesheets="@main.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button layoutX="192.0" layoutY="87.0" mnemonicParsing="false" onAction="#eventDeleteMeter" prefHeight="25.0" prefWidth="90.0" styleClass="buttonAdd" stylesheets="@main.css" text="Yes">
+                           <graphic>
+                              <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/Ok_32px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button layoutX="90.0" layoutY="87.0" mnemonicParsing="false" onAction="#eventDeleteMeterCancel" prefHeight="25.0" prefWidth="90.0" styleClass="btnCancel" stylesheets="@main.css" text="No">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/Cancel_can_32px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label layoutX="90.0" layoutY="36.0" text="Are you sure to remove meter">
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblDeleteMeter" layoutX="253.0" layoutY="36.0" text="sahan">
+                           <font>
+                              <Font name="Segoe UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="41.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/img_info.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </center>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </BorderPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

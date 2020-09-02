@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="484.0" prefWidth="862.0" styleClass="panelBackground" stylesheets="@main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.zmeter.login.controller.FXMLUserAccountController">
+   <children>
+      <Pane fx:id="pnlMain" prefHeight="484.0" prefWidth="862.0" styleClass="panelBackground" stylesheets="@main.css">
+         <children>
+            <Pane layoutY="169.0" prefHeight="68.0" prefWidth="862.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Label fx:id="lblName" layoutX="191.0" layoutY="12.0" text="Sahan Dinuka">
+                     <font>
+                        <Font name="Segoe UI Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="191.0" layoutY="40.0" text="Last logged at" textFill="#868686" />
+                  <Label fx:id="lblLastLog" layoutX="272.0" layoutY="40.0" text="Loading..." textFill="#868686" />
+                  <Button fx:id="btnEditProfile" layoutX="702.0" layoutY="20.0" mnemonicParsing="false" onAction="#actionEditProfile" prefHeight="28.0" prefWidth="123.0" styleClass="buttonAdd" stylesheets="@main.css" text="Edit Profile">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Edit_64px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnSave" disable="true" layoutX="702.0" layoutY="20.0" mnemonicParsing="false" onAction="#actionSave" prefHeight="28.0" prefWidth="123.0" styleClass="buttonSave" stylesheets="@main.css" text="Save" visible="false">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Save_64px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnCancelEditProfile" disable="true" layoutX="562.0" layoutY="20.0" mnemonicParsing="false" onAction="#actionCancelEditProfile" prefHeight="28.0" prefWidth="123.0" styleClass="btnCancel" stylesheets="@main.css" text="Cancel" visible="false">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/Cancel_can_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="pnlEditProfile" disable="true" layoutX="178.0" layoutY="259.0" prefHeight="196.0" prefWidth="654.0">
+               <children>
+                  <VBox layoutX="9.0" layoutY="6.0" prefHeight="132.0" prefWidth="300.0" spacing="1.0">
+                     <children>
+                        <Label text="ID" textFill="#7d4199">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtId" editable="false" prefHeight="30.0" prefWidth="300.0" promptText="ID">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </TextField>
+                        <Label text="Username" textFill="#7d4199">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtUsername" onKeyPressed="#eventRemoveSpaces" prefHeight="30.0" prefWidth="300.0" promptText="Username">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </TextField>
+                        <Label text="Name" textFill="#7d4199">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtName" prefHeight="30.0" prefWidth="300.0" promptText="Name">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="347.0" layoutY="6.0" prefHeight="132.0" prefWidth="300.0" spacing="1.0">
+                     <children>
+                        <Label text="Password" textFill="#7d4199">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <PasswordField fx:id="txtPassword" prefHeight="30.0" prefWidth="300.0" promptText="Password">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </PasswordField>
+                        <Label text="Repeat Password" textFill="#7d4199">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <PasswordField fx:id="txtRepeatPassword" prefHeight="30.0" prefWidth="300.0" promptText="Repeat Password">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </PasswordField>
+                        <Label text="Phone Number" textFill="#7d4199">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtPhoneNo" prefHeight="30.0" prefWidth="300.0" promptText="Phone Number">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+            <ImageView fitHeight="169.0" fitWidth="862.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/userCover.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgProfile" fitHeight="130.0" fitWidth="130.0" layoutX="36.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true" />
+            <Circle fill="#ffffff00" layoutX="101.0" layoutY="203.0" radius="70.0" stroke="#7d4199" strokeType="INSIDE" strokeWidth="5.0" />
+            <Button fx:id="btnAddPhoto" layoutX="74.0" layoutY="259.0" mnemonicParsing="false" onAction="#actionOpenChangeImage" prefHeight="28.0" prefWidth="54.0" styleClass="buttonChangephoto" stylesheets="@main.css">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/Add%20Camera_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="pnlChangeImage" disable="true" prefHeight="484.0" prefWidth="862.0" visible="false">
+         <children>
+            <Pane layoutX="225.0" layoutY="71.0" prefHeight="342.0" prefWidth="412.0">
+               <children>
+                  <BorderPane layoutX="4.0" layoutY="7.0" prefHeight="329.0" prefWidth="404.0" styleClass="panelPopUp" stylesheets="@main.css">
+                     <top>
+                        <Pane prefHeight="40.0" prefWidth="490.0" styleClass="editCustomerTopPanel" stylesheets="@main.css" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="11.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/Add%20Camera_64px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="43.0" layoutY="13.0" text="Change Profile Image" textFill="WHITE">
+                                 <font>
+                                    <Font name="Segoe UI" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </top>
+                     <center>
+                        <GridPane BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <BorderPane.margin>
+                              <Insets bottom="20.0" left="50.0" right="50.0" top="10.0" />
+                           </BorderPane.margin>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#chooseImage1" style="-fx-background-color: transparent;" styleClass="btnHoverImage" stylesheets="@main.css">
+                                 <graphic>
+                                    <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../img/boy1.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseImage2" style="-fx-background-color: transparent;" styleClass="btnHoverImage" stylesheets="@main.css" GridPane.columnIndex="1">
+                                 <graphic>
+                                    <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../img/boy2.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseImage3" style="-fx-background-color: transparent;" styleClass="btnHoverImage" stylesheets="@main.css" GridPane.columnIndex="2">
+                                 <graphic>
+                                    <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../img/boy3.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseImage4" style="-fx-background-color: transparent;" styleClass="btnHoverImage" stylesheets="@main.css" GridPane.rowIndex="1">
+                                 <graphic>
+                                    <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../img/girl1.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseImage5" style="-fx-background-color: transparent;" styleClass="btnHoverImage" stylesheets="@main.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <graphic>
+                                    <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../img/girl2.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseImage6" style="-fx-background-color: transparent;" styleClass="btnHoverImage" stylesheets="@main.css" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <graphic>
+                                    <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../img/girl3.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </GridPane>
+                     </center>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <bottom>
+                        <Button mnemonicParsing="false" onAction="#actionCancelProfilePictureWindow" prefHeight="25.0" prefWidth="155.0" styleClass="btnCancel" stylesheets="@main.css" text="Cancel" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets bottom="30.0" />
+                           </BorderPane.margin>
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/Cancel_can_32px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </bottom>
+                  </BorderPane>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

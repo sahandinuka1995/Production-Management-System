@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="423.0" prefWidth="847.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.zmeter.login.controller.FXMLRegisterController">
+    <children>
+        <Pane prefHeight="423.0" prefWidth="847.0" style="-fx-border-color: #7D4199; -fx-border-width: 2; -fx-border-radius: 50 0 0 0; -fx-background-color: transparent;">
+            <children>
+                <ImageView fitHeight="449.0" fitWidth="847.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../img/login-one.png" />
+                    </image>
+                </ImageView>
+                <Pane prefHeight="423.0" prefWidth="424.0" style="-fx-background-color: transparent; -fx-border-color: #7D4199; -fx-border-width: 2; -fx-border-radius: 50 0 0 0;">
+                    <children>
+                        <ImageView fitHeight="45.0" fitWidth="189.0" layoutX="143.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../img/logo.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="145.0" layoutY="22.0" text="REGISTER AS A MEMBER" textFill="#5a5a5a">
+                            <font>
+                                <Font name="Segoe UI" size="12.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="124.0" layoutY="104.0" text="Register to enter into the system" textFill="#9e9d9d" />
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="116.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../img/Contacts_32px.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="116.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../img/Contacts_32px.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="116.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../img/Phone_32px.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="116.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../img/Lock%202_32px.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="116.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../img/Lock%202_32px.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="btnRegister" disable="true" layoutX="112.0" layoutY="343.0" mnemonicParsing="false" onAction="#actionRegister" onMouseEntered="#eventHoverRegister" onMouseExited="#eventExitRegister" prefHeight="25.0" prefWidth="224.0" style="-fx-background-color: #7D4199;" text="REGISTER" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                        <Label layoutX="134.0" layoutY="384.0" text="Already have an account ?" textFill="#797979" />
+                        <Label fx:id="lblLogin" layoutX="283.0" layoutY="384.0" onMouseEntered="#eventHoverLogin" onMouseExited="#eventExitLogin" onMousePressed="#loginPressed" text="Login" textFill="#7d4199">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                        </Label>
+                        <Label layoutX="162.0" layoutY="121.0" text="Please fill all fields" textFill="#9e9d9d" />
+                        <ImageView fx:id="imgPasswordError" fitHeight="15.0" fitWidth="15.0" layoutX="315.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                            <image>
+                                <Image url="@../../../../img/Info_52px.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fx:id="imgPasswordCorrect" fitHeight="15.0" fitWidth="15.0" layoutX="315.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                            <image>
+                                <Image url="@../../../../img/Info_green_52px.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fx:id="imgUsernameError" fitHeight="15.0" fitWidth="15.0" layoutX="315.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                            <image>
+                                <Image url="@../../../../img/Info_52px.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fx:id="imgUsernameCorrect" fitHeight="15.0" fitWidth="15.0" layoutX="315.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                            <image>
+                                <Image url="@../../../../img/Info_green_52px.png" />
+                            </image>
+                        </ImageView>
+                  <ImageView fx:id="imgPhoneNoError" fitHeight="15.0" fitWidth="15.0" layoutX="315.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../../img/Info_52px.png" />
+                     </image>
+                  </ImageView>
+                  <JFXTextField fx:id="txtUsername" alignment="CENTER" layoutX="112.0" layoutY="156.0" onKeyPressed="#eventRemoveSpaces" onKeyReleased="#checkUsername" prefColumnCount="20" promptText="Username" unFocusColor="#7d4199" />
+                  <JFXTextField fx:id="txtName" alignment="CENTER" layoutX="112.0" layoutY="191.0" onKeyReleased="#checkUsername" prefColumnCount="20" promptText="Name" unFocusColor="#7d4199" />
+                  <JFXTextField fx:id="txtPhoneNumber" alignment="CENTER" layoutX="112.0" layoutY="225.0" onKeyReleased="#eventCheckPhoneNo" prefColumnCount="20" promptText="Phone Number" unFocusColor="#7d4199" />
+                  <JFXPasswordField fx:id="txtPassword" alignment="CENTER" layoutX="112.0" layoutY="261.0" prefColumnCount="20" promptText="Password" unFocusColor="#7d4199" />
+                  <JFXPasswordField fx:id="txtRepeatPassword" alignment="CENTER" layoutX="112.0" layoutY="296.0" onKeyReleased="#checkConfirmed" prefColumnCount="20" promptText="Repeat Password" unFocusColor="#7d4199" />
+                    </children>
+                </Pane>
+                <ImageView fx:id="imgRegisterClose" fitHeight="20.0" fitWidth="20.0" layoutX="821.0" layoutY="7.0" onMouseEntered="#eventHoverClose" onMouseExited="#eventExitClose" onMousePressed="#exitPressed" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../img/Cancel_32px.png" />
+                    </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+                </ImageView>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
