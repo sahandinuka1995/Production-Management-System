@@ -8,4 +8,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## Screenshots
-![Alt text](https://previews.123rf.com/images/aquir/aquir1311/aquir131100316/23569861-sample-grunge-red-round-stamp.jpg "Optional title")
+![Alt text](https://i.ibb.co/KV4DfhC/Screenshot-2.png "Login")
