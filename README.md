@@ -8,8 +8,8 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## Libraries
-controlsfx-8.40.11.jar
-jfoenix-8.0.8.jar
+controlsfx-8.40.11.jar | 
+jfoenix-8.0.8.jar | 
 mysql-connector-java-8.0.17.jar
 
 ## Screenshots
